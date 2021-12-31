@@ -39,8 +39,8 @@ Bedtijd:
   speech:
     text: Welterusten
   action:
-    service: script.media_off
-    data: {}
-    service: script.turn_off
-    data: {}
+    - service: script.media_off
+      data: {}
+    - service: script.turn_off
+      data: {}
   
