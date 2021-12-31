@@ -11,7 +11,7 @@
 ### Add Respotory to HA add-on
 https://github.com/rhasspy/hassio-addons
 Install "Rhasspy Assistant"
-Use >***nl*** in "profile_name" under options to set Dutch profile
+Use ***nl*** in "profile_name" under options to set Dutch profile
 
 ## Setup
 ### Configuration Rhasspy
