@@ -32,8 +32,7 @@ Settings:
 ## Use
 ### Add Sentences
 The system uses 'Sentences' from [sentences.ini](./sentences.ini) to understand and trigger event. 
-The [HassXXX] are HA built in [intents](https://developers.home-assistant.io/docs/intent_builtin)
-The [XXXX] are your own intents that are sent to [intent_script](https://www.home-assistant.io/integrations/intent_script ) and handeled by [intent_script.yaml](./intent_script.yaml)
+The [HassXXX] are [HA built-in intents](https://developers.home-assistant.io/docs/intent_builtin) and [XXXX] are your own intents that are sent to [intent_script](https://www.home-assistant.io/integrations/intent_script ) and handeled by [intent_script.yaml](./intent_script.yaml)
 The $Rhasspy/xxx (example  [$Rhasspy/switch](./slots/rhasspy/switch))  refers to "Slots" you can find in \\<internal IP>\share\rhasspy\profiles\nl\slots\rhasspy
 
 ### Testing
