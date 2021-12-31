@@ -41,6 +41,6 @@ Bedtijd:
   action:
     - service: script.media_off
       data: {}
-    - service: script.turn_off
-      data: {}
+    - service: scene.turn_on
+      entity_id: scene.all_lights_off
   
