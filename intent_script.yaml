@@ -1,0 +1,46 @@
+GetTemperature:  # Intent type
+  speech:
+    text: Het is {{ states('sensor.garden_sensor_temperature') }} graden buiten en {{ state_attr('climate.43', "current_temperature") }} binnen
+  action:
+    service: notify.mobile_app_gm1903
+    data:
+      message: It is {{ states('sensor.garden_sensor_temperature') }} degrees outdoors and {{ state_attr('climate.43', "current_temperature") }} indoors
+      title: Test Voice control
+PlayMusic:
+  speech:
+    text: Ik zet de muziek in de eetkamer op Aardvark Blues
+  action:
+    service: media_player.select_source
+    data:
+      source: Aardvark Blues FM (US)
+    target:
+      entity_id: media_player.dining_room
+StopMusic:
+  speech:
+    text: Ik zet de muziek uit
+  action:
+    service: media_player.media_stop
+    data: {}
+    target:
+      entity_id: media_player.dining_room
+MediaAan:
+  speech:
+    text: Ik zet de tv aan
+  action:
+    service: script.media_on
+    data: {}
+MediaUit:
+  speech:
+    text: Ik zet de tv aan
+  action:
+    service: script.media_off
+    data: {}
+Bedtijd:
+  speech:
+    text: Welterusten
+  action:
+    service: script.media_off
+    data: {}
+    service: script.turn_off
+    data: {}
+  
