@@ -1,28 +1,50 @@
 # HA_Rhasspy
+## Table of contents
+* [Installation](#Installation)
+* [Setup](#setup)
+* [Use](#use)
 
-Add Respotory to HA add-on
+## Installation
+### Add Respotory to HA add-on
 https://github.com/rhasspy/hassio-addons
 Install "Rhasspy Assistant"
-Use **nl** in "profile_name" under options to set Dutch profile
+Use ***nl*** in "profile_name" under options to set Dutch profile
 
+## Setup
+### Configuration Rhasspy
 In the Rhasspy webinterface (Open Web UI)
 Settings:
-- Audio Recording --> arecord --> default (use config on HA-Rhasspy Assistant to set audio)
+- Audio Recording --> arecord 
+  - default (use config on HA-Rhasspy Assistant to set audio)
 - Wake Word --> Porcupine
 - Speech to Text --> Kaldi
 - Intent Recognition --> Fsticuffs
-- Text to Speech --> Espeak ##it looks like speech goes to the HA TTS system (https://www.home-assistant.io/integrations/google_translate/)
-- Audio Player --> aplay (default device)
+- Text to Speech --> Espeak 
+  - --it looks like speech goes via the HA TTS system (https://www.home-assistant.io/integrations/google_translate/)--
+- Audio Player --> aplay 
+  - default (use config on HA-Rhasspy Assistant to set audio)
 - Dialogue Management --> Rhasspy
 - Intent Handeling --> Home Assistant 
---> While using HA add-on us "Hass URL" http://hassio/homeassistant/
---> No Access Token
---> Use "Send intents to Home Assistant" add intent: & intent_script: to your HA configuration file https://www.home-assistant.io/integrations/intent_script 
-https://developers.home-assistant.io/docs/intent_builtin/#:~:text=Home%20Assistant%20comes%20with%20a%20couple%20of%20built-in,with%20user%20defined%20intents.%20Turn%20an%20entity%20off.
+  - While using HA add-on us "Hass URL" http://hassio/homeassistant/
+  - No Access Token
+  - Use "Send intents to Home Assistant" add intent: & intent_script: to your HA configuration file
 
-The system uses 'Sentences' from sentences.ini to understand and trigger event. 
-The [HassXXX] are HA built in intents https://developers.home-assistant.io/docs/intent_builtin/#:~:text=Home%20Assistant%20comes%20with%20a%20couple%20of%20built-in,with%20user%20defined%20intents.%20Turn%20an%20entity%20off.
-The [XXXX] are your own intents that are sent to 'inent_script' and handeled by 'intent_script.yaml'
+## Use
+### Add Sentences
+The system uses 'Sentences' from [sentences.ini](./sentences.ini) to understand and trigger event. 
+The [HassXXX] are [HA built-in intents](https://developers.home-assistant.io/docs/intent_builtin) and [XXXX] are your own intents that are sent to [intent_script](https://www.home-assistant.io/integrations/intent_script ) and handeled by [intent_script.yaml](./intent_script.yaml)
+The $Rhasspy/xxx (example  [$Rhasspy/switch](./slots/rhasspy/switch))  refers to "Slots" you can find in \\<internal IP>\share\rhasspy\profiles\nl\slots\rhasspy
 
+### Testing
 Testing in Rhasspy Web UI (handy if you do not have Audio)
 Use 'Recognize' to test the Intent recognition. If you want to sent the event to HA you can use 'Handle'
+
+### Extra - Get HA device IDs and Friendly-Names
+If you want to get all your device IDs and friendly names you can use the code below in 'Template' in HA
+
+  ```YAML
+  message: >
+        {% for state in states %}
+          - {{- state.entity_id -}}, {{- state.attributes.friendly_name -}}
+        {% endfor %}
+  ```
