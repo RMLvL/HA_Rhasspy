@@ -1,11 +1,8 @@
 # HA_Rhasspy
 ## Table of contents
-* [General info](#general-info)
 * [Installation](#Installation)
 * [Setup](#setup)
 * [Use](#use)
-
-# general-info
 
 ## Installation
 ### Add Respotory to HA add-on
