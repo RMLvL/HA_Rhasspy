@@ -11,7 +11,7 @@
 ### Add Respotory to HA add-on
 https://github.com/rhasspy/hassio-addons
 Install "Rhasspy Assistant"
-Use **nl** in "profile_name" under options to set Dutch profile
+Use >***nl*** in "profile_name" under options to set Dutch profile
 
 ## Setup
 ### Configuration Rhasspy
@@ -31,9 +31,9 @@ Settings:
 
 ## Use
 ### Add Sentences
-The system uses 'Sentences' from ![sentences.ini](./sentences.ini) to understand and trigger event. 
+The system uses 'Sentences' from [sentences.ini](./sentences.ini) to understand and trigger event. 
 The [HassXXX] are HA built in [intents](https://developers.home-assistant.io/docs/intent_builtin)
-The [XXXX] are your own intents that are sent to [intent_script](https://www.home-assistant.io/integrations/intent_script ) and handeled by ![intent_script.yaml](./intent_script.yaml)
+The [XXXX] are your own intents that are sent to [intent_script](https://www.home-assistant.io/integrations/intent_script ) and handeled by [intent_script.yaml](./intent_script.yaml)
 The $Rhasspy/xxx (example  [$Rhasspy/switch](./slots/rhasspy/switch))  refers to "Slots" you can find in \\<internal IP>\share\rhasspy\profiles\nl\slots\rhasspy
 
 ### Testing
