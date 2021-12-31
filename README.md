@@ -14,13 +14,15 @@ Use ***nl*** in "profile_name" under options to set Dutch profile
 ### Configuration Rhasspy
 In the Rhasspy webinterface (Open Web UI)
 Settings:
-- Audio Recording --> arecord --> default (use config on HA-Rhasspy Assistant to set audio)
+- Audio Recording --> arecord 
+  - default (use config on HA-Rhasspy Assistant to set audio)
 - Wake Word --> Porcupine
 - Speech to Text --> Kaldi
 - Intent Recognition --> Fsticuffs
 - Text to Speech --> Espeak 
   - --it looks like speech goes via the HA TTS system (https://www.home-assistant.io/integrations/google_translate/)--
-- Audio Player --> aplay (default device)
+- Audio Player --> aplay 
+  - default (use config on HA-Rhasspy Assistant to set audio)
 - Dialogue Management --> Rhasspy
 - Intent Handeling --> Home Assistant 
   - While using HA add-on us "Hass URL" http://hassio/homeassistant/
