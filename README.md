@@ -18,13 +18,14 @@ Settings:
 - Wake Word --> Porcupine
 - Speech to Text --> Kaldi
 - Intent Recognition --> Fsticuffs
-- Text to Speech --> Espeak ##it looks like speech goes to the HA TTS system (https://www.home-assistant.io/integrations/google_translate/)
+- Text to Speech --> Espeak 
+  - --it looks like speech goes to the HA TTS system (https://www.home-assistant.io/integrations/google_translate/)--
 - Audio Player --> aplay (default device)
 - Dialogue Management --> Rhasspy
 - Intent Handeling --> Home Assistant 
---> While using HA add-on us "Hass URL" http://hassio/homeassistant/
---> No Access Token
---> Use "Send intents to Home Assistant" add intent: & intent_script: to your HA configuration file
+  - While using HA add-on us "Hass URL" http://hassio/homeassistant/
+  - No Access Token
+  - Use "Send intents to Home Assistant" add intent: & intent_script: to your HA configuration file
 
 ## Use
 ### Add Sentences
