@@ -20,7 +20,7 @@ Settings:
 - Speech to Text --> Kaldi
 - Intent Recognition --> Fsticuffs
 - Text to Speech --> Espeak 
-  - --it looks like speech goes via the HA TTS system (example [google translate](https://www.home-assistant.io/integrations/google_translate/)--
+  - it looks like speech goes via the HA TTS system (example [google translate](https://www.home-assistant.io/integrations/google_translate/)
 - Audio Player --> aplay 
   - default (use config on HA-Rhasspy Assistant to set audio)
 - Dialogue Management --> Rhasspy
