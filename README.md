@@ -8,7 +8,7 @@
 ### Add Respotory to HA add-on
 https://github.com/rhasspy/hassio-addons
 Install "Rhasspy Assistant"
-Use ***nl*** in "profile_name" under options to set Dutch profile
+Use ```nl``` in "profile_name" under options to set Dutch profile
 
 ## Setup
 ### Configuration Rhasspy
@@ -25,7 +25,7 @@ Settings:
   - default (use config on HA-Rhasspy Assistant to set audio)
 - Dialogue Management --> Rhasspy
 - Intent Handeling --> Home Assistant 
-  - While using HA add-on us "Hass URL" "http://hassio/homeassistant/" ```http://hassio/homeassistant/```
+  - While using HA add-on us "Hass URL" ```http://hassio/homeassistant/```
   - No Access Token
   - Use "Send intents to Home Assistant" add intent: & intent_script: to your HA configuration file
 
