@@ -28,9 +28,10 @@ Testing in Rhasspy Web UI (handy if you do not have Audio)
 Use 'Recognize' to test the Intent recognition. If you want to sent the event to HA you can use 'Handle'
 
 If you want to get all your device ids and friendly names you can use the code below in 'Template' in HA
-'''yaml
+
+  '''yaml
   message: >
         {% for state in states %}
           - {{- state.entity_id -}}, {{- state.attributes.friendly_name -}}
         {% endfor %}
-'''
+  '''
