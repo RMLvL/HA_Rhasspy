@@ -17,12 +17,20 @@ Settings:
 - Intent Handeling --> Home Assistant 
 --> While using HA add-on us "Hass URL" http://hassio/homeassistant/
 --> No Access Token
---> Use "Send intents to Home Assistant" add intent: & intent_script: to your HA configuration file https://www.home-assistant.io/integrations/intent_script 
-https://developers.home-assistant.io/docs/intent_builtin/#:~:text=Home%20Assistant%20comes%20with%20a%20couple%20of%20built-in,with%20user%20defined%20intents.%20Turn%20an%20entity%20off.
+--> Use "Send intents to Home Assistant" add intent: & intent_script: to your HA configuration file
 
 The system uses 'Sentences' from sentences.ini to understand and trigger event. 
-The [HassXXX] are HA built in intents https://developers.home-assistant.io/docs/intent_builtin/#:~:text=Home%20Assistant%20comes%20with%20a%20couple%20of%20built-in,with%20user%20defined%20intents.%20Turn%20an%20entity%20off.
+The [HassXXX] are HA built in [intents](https://developers.home-assistant.io/docs/intent_builtin) or custom [intent_script](https://www.home-assistant.io/integrations/intent_script )
+The $Rhasspy/lights refers to "Slots" you can find in \\<internal IP>\share\rhasspy\profiles\nl\slots\rhasspy
 The [XXXX] are your own intents that are sent to 'inent_script' and handeled by 'intent_script.yaml'
 
 Testing in Rhasspy Web UI (handy if you do not have Audio)
 Use 'Recognize' to test the Intent recognition. If you want to sent the event to HA you can use 'Handle'
+
+If you want to get all your device ids and friendly names you can use the code below in 'Template' in HA
+'''yaml
+  message: >
+        {% for state in states %}
+          - {{- state.entity_id -}}, {{- state.attributes.friendly_name -}}
+        {% endfor %}
+'''
